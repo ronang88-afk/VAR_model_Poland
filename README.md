@@ -29,6 +29,22 @@ The sample runs from **1996 Q3 to 2024 Q4**. There are 8 missing values for unem
 
 ---
 
+## Results:
+
+OLS shows a strong negative correlation, but this is likely spurious due to non‑stationarity.
+
+VAR(10) fits the data extremely well (R² > 0.98), but the cross‑equation lags are mostly insignificant.
+
+No Granger causality – unemployment does not help predict GDP, and GDP does not help predict unemployment.
+
+IRFs and FEVD confirm that the two series are largely driven by their own past innovations.
+
+The model is diagnostically sound (no serial correlation, no heteroscedasticity, stable coefficients), though residuals are not normally distributed (common in macro time series).
+
+Implication: Despite a contemporaneous correlation, there is no dynamic predictive relationship between GDP and unemployment in Poland over this period.
+
+---
+
 ## Requirements
 
 The analysis is written in **R version 4.5.2** (or later) and requires the following packages:
@@ -44,3 +60,5 @@ Install them with:
 
 ```r
 install.packages(c("urca", "vars", "tseries", "forecast", "tidyverse", "zoo"))
+
+
